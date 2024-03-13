@@ -9,109 +9,107 @@
  *
  *****************************************************************************/
 /**
- * @file function declarations 
- * @brief this file includes all the funtion headings
+ * @file stats.h 
+ * @brief Definitions and macros required for the c1m1 assignment
  *
- * Creating a simple application that performs statistical analytics on a dataset.
  *
  * @author Rishika D S
- * @date 11-03-2002
+ * @date 11/3/2024
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* 
+/**
+ * @brief Prints the statistics of a given array
+ *
+ * This function takes the resulting statistics done on an array
+ * which are: minimum, maximum, mean and median, and print those
+ * values on the screen
+ * 
+ * @param minimum The minimum number of the given array
+ * @param maximum The maximum number of the given array
+ * @param mean The mean of the given array
+ * @param median The median of the given array
+ *
+ * @return void
+ */
+void print_statistics (unsigned char minimum, unsigned char maximum, float mean, unsigned char median);
 
-void print_array(unsigned char data[], int length)
-This function prints the array.
-
-unsigned char find_minimum(unsigned char data[], int length)
-This function skims through and returns the least value integer in the array.
-
-unsigned char find_maximum(unsigned char data[], int length)
-This function skims through and returns the highest value integer in the array.
-
-float find_mean(unsigned char data[], int length)
-This funtion returns the mean of all the integers present in the array.
-
-unsigned char find_median(unsigned char data[], int length)
-This funtion returns the median of all the integers present in the array.
-
-void sort_array(unsigned char data[], int length)
-This funtion sorts the original array.
-
-void print_statistics(unsigned char data[], int length)
-This function calls the mean, median, min, max functions and prints the value they return.
- */ 
 
 /**
- * void print_array(unsigned char data[], int length)
- * @brief This function prints the array.
+ * @brief Prints the contents of a given array
  *
- * @param TEST[SIZE] array (the array stored in the main program)
- * @param Length (length of the array)
+ * This function takes the given array and prints it to the
+ * screen.
+ * 
+ * @param array The first element of the array to be printed on the screen
  *
- * @return NA (just prints the array)
+ * @return void
  */
+void print_array (unsigned char *array, unsigned int counter);
+
 
 /**
- * unsigned char find_minimum(unsigned char data[], int length)
- * @brief This function skims through and returns the least value integer in the array.
+ * @brief Finds the median of the given array
  *
- * @param TEST[SIZE] array (the array stored in the main program)
- * @param Length (length of the array)
+ * This function takes the given array and finds
+ * its median.
+ * 
+ * @param array The first element of the array to be processed
+ * @param 
  *
- * @return least value integer in the array.
+ * @return median The median value of the given array.
  */
+unsigned char find_median (unsigned char *array, unsigned int counter);
 
 /**
- * unsigned char find_maximum(unsigned char data[], int length)
- * @brief This function skims through and returns the highest value integer in the array.
+ * @brief Finds the mean of the given array
  *
- * @param TEST[SIZE] array (the array stored in the main program)
- * @param Length (length of the array)
+ * This function takes the given array and finds
+ * its mean.
+ * 
+ * @param array The first element of the array to be processed
  *
- * @return highest value integer in the array.
+ * @return mean The mean value of the given array.
  */
+float find_mean (unsigned char *array, unsigned int counter);
 
 /**
- * float find_mean(unsigned char data[], int length)
- * @brief This funtion returns the mean of all the integers present in the array.
+ * @brief Finds the maximum of the given array
  *
- * @param TEST[SIZE] array (the array stored in the main program)
- * @param Length (length of the array)
+ * This function takes the given array and finds
+ * its maximum.
+ * 
+ * @param array The first element of the array to be processed
  *
- * @return mean.
+ * @return maximum The maximum value of the given array.
  */
+unsigned char find_maximum (unsigned char *array, unsigned int counter);
 
 /**
- * unsigned char find_median(unsigned char data[], int length)
- * @brief This funtion returns the median of all the integers present in the array.
+ * @brief Finds the minimum of the given array
  *
- * @param TEST[SIZE] array (the array stored in the main program)
- * @param Length (length of the array)
+ * This function takes the given array and finds
+ * its minimum.
+ * 
+ * @param array The first element of the array to be processed
  *
- * @return median.
+ * @return minimum The minimum value of the given array.
  */
+unsigned char find_minimum (unsigned char *array, unsigned int counter);
 
 /**
- * void sort_array(unsigned char data[], int length)
- * @brief This funtion sorts the original array.
+ * @brief Sorts the given array from the largest to smallest
  *
- * @param TEST[SIZE] array (the array stored in the main program)
- * @param Length (length of the array)
+ * This function takes the given array and its length, sorts
+ * the array from the largest to smallest using bubble sort and returns the
+ * sorted array.
+ * 
+ * @param array The first element of the array to be processed
  *
- * @return sorted array.
+ * @return median The median value of the given array.
  */
+void sort_array (unsigned char *array, unsigned int counter);
 
-/**
- * void print_statistics(unsigned char data[], int length).
- * @brief This function calls the mean, median, min, max functions and prints the value they return
- *
- * @param TEST[SIZE] array (the array stored in the main program)
- * @param Length (length of the array)
- *
- * @return NA (prints mean, median, min, max)
- */
 #endif /* __STATS_H__ */
